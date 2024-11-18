@@ -22,8 +22,7 @@ export default function ForecastWeatherDetail(props: ForecastWeatherDetailProps)
     day = "Tuesday",
     temp,
     feels_like,
-    temp_min,
-    temp_max,
+  
     description
   } = props;
   return (
