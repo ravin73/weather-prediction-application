@@ -91,7 +91,7 @@ export default function Home() {
 
 
   const firstData = data?.list[0]
-  console.log("data", data?.city.name);
+  // console.log("data", data?.city.name);
 
   const uniqueDates = [
     ...new Set(
@@ -136,7 +136,7 @@ export default function Home() {
           <div className="space-y-2">
             <h2 className="flex gap-1 text-2xl items-end">
               <p>{format(parseISO(firstData?.dt_txt ?? ''), 'EEEE')}</p>
-              <p className="text-lg">({format(parseISO(firstData?.dt_txt ?? ''), 'dd.MM.yyyy')})</p>
+              <p className="text-lg">({format(parseISO(firstData?.dt_txt ?? ''), 'dd.MM.yyyy')}) {data?.city.name}</p>
             </h2>
             <Container className="gap-10 px-6 items-center">
               <div className="flex flex-col px-4">
