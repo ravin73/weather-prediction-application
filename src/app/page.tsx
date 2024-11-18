@@ -12,7 +12,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { format, fromUnixTime, parseISO } from "date-fns";
 import { useAtom } from "jotai";
-import Image from "next/image";
+
 import { loadingCityAtom, placeAtom } from "./atom";
 import { useEffect } from "react";
 
@@ -73,7 +73,7 @@ interface WeatherData {
 }
 
 export default function Home() {
-  const [place, setPlace] = useAtom(placeAtom);
+  const [place, ] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
   const { isLoading, error, data,refetch } = useQuery<WeatherData>({
     queryKey: ['repoData'],
