@@ -111,10 +111,14 @@ export default function Home() {
   });
 
   if (isLoading) return (
-    <div className="flex items-center min-h-screen justify-center">
-      <p className="animate-bounce">Loading...</p>
+    <div className="flex items-center min-h-screen justify-center bg-gradient-to-r from-zinc-500 to-neutral-300">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-75 mx-auto"></div>
+        <p className="animate-pulse text-white mt-4 text-lg font-semibold">Fetching Weather Data...</p>
+      </div>
     </div>
   );
+  
   if (error)
     return (
       <div className="flex items-center min-h-screen justify-center">
