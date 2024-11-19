@@ -75,7 +75,7 @@ interface WeatherData {
 export default function Home() {
   const [place, ] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
-  const { isLoading, error, data,refetch } = useQuery<WeatherData>({
+  const { isLoading, error, data,refetch } = useQuery<WeatherData , Error>({
     queryKey: ['repoData'],
     queryFn: async () => {
       const { data } = await axios.get(
@@ -122,7 +122,7 @@ export default function Home() {
   if (error)
     return (
       <div className="flex items-center min-h-screen justify-center">
-        {/* @ts-ignore */}
+        
         <p className="text-red-400">{error.message}</p>
       </div>
     );
